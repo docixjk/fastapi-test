@@ -1,11 +1,15 @@
 version: '3'
 
 services:
+  # FastAPI 서비스를 정의
   fastapi:
+    # 빌드 구성
     build:
       context: .
       dockerfile: Dockerfile
+    # 포트 노출
     ports:
       - "80:80"
+    # 현재 디렉토리를 컨테이너 내부의 /app으로 마운트
     volumes:
       - .:/app
